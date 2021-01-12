@@ -6,6 +6,9 @@ import './App.scss';
 import {IMAGES} from './shared/Images'
 import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import config from 'react-reveal/globals';
+
+config({ ssrFadeout: true });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +19,7 @@ const [isLoading, setIsLoading] = useState(true)
 useEffect(()=>{
   const imgs= IMAGES
   cacheImages(imgs)
-  
+  document.querySelector("body").scrollTo(0,0)
 })
 
 const cacheImages = async(srcArray)=>{
@@ -35,7 +38,7 @@ const cacheImages = async(srcArray)=>{
   // );
 }
 
-  
+
     return(
       <div>
         {isLoading || !document.fonts.ready

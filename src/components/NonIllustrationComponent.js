@@ -1,7 +1,6 @@
 import {React, Fragment, useEffect} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import {Left1Right2, DoubleImage, OneOffsetImg, FullOne} from '../components/ProjectImages'
-import Fade from 'react-reveal/Fade';
 import {Power2, gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation } from "react-router-dom";
@@ -74,11 +73,6 @@ function NextSteps(props){
     )
 }
 
-function Scroll(){
-document.querySelector("body").scrollTo(0,0)
-}
-
-
 // const scrollLoad = async () =>{
 //     const sections = Array.from(document.querySelectorAll("section"))
 
@@ -101,7 +95,23 @@ document.querySelector("body").scrollTo(0,0)
 //         }) 
 //     })
 // }
-
+const doAnimation = () => {
+    const sections = Array.from(document.querySelectorAll("section"))
+    sections.forEach(sec=>{
+        let tl = new gsap.timeline(
+            {
+                paused: true, 
+            }
+        ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
+        .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
+        .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
+        ScrollTrigger.create({
+            animation:tl,
+            trigger:sec,
+            start:"top bottom",
+    })
+    }) 
+}
 
 function GetProject(props){
     // let imageReveal = CSSRulePlugin.getRule('.img-container:after')
@@ -119,25 +129,12 @@ function GetProject(props){
         
         
         useEffect(()=>{
-            
-          Scroll()  
-          
-            const sections = Array.from(document.querySelectorAll("section"))
-            sections.forEach(sec=>{
-                let tl = new gsap.timeline(
-                    {
-                        paused: true, 
-                    }
-                ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-                .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
-                .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
-                ScrollTrigger.create({
-                    animation:tl,
-                    trigger:sec,
-                    start:"top bottom",
-            })
-            }) 
-            
+        //  promise1.then()
+        async function loadingOrder(){
+            await document.querySelector("body").scrollTo(0,0)
+            doAnimation()
+        }
+          loadingOrder()   
         }, [pathname]);   
    
         
@@ -146,27 +143,21 @@ return(
         <Top project= {project}/> 
     <Container>
             <div className = "spacer"></div>
-            <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <TLDR project = {project}/>
                     </div>
             </Row>
-            </Fade>
-            <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Role project = {project}/>
                 </div>
             </Row>
-            </Fade>
-            <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Why project = {project}/>
                 </div>
             </Row>
-            </Fade>
             
              {project.id === 0 &&
             <>
@@ -186,13 +177,11 @@ return(
     
 {/* make img-container width = width of image (add width and height to images)??? 
 </div> */}
-            <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Research project = {project}/>
                 </div>
             </Row>
-            </Fade>
 
        {project.id === 0 &&
                  <Left1Right2 img1={project.images[3]} img2={project.images[4]} img3={project.images[5]}/>  
@@ -203,13 +192,11 @@ return(
         {project.id === 3 &&
                  <FullOne image = {project.images[0]}/>  
         }
-         <Fade>
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Iterations project = {project}/>
                 </div>
             </Row>
-            </Fade>
             {project.id ===0 &&
             <>
              <DoubleImage img1={project.images[6]} img2={project.images[7]}/>
@@ -233,11 +220,9 @@ return(
             <div className = "spacer"></div>
             <div className="stats" style= {{background:`${project.color}`}}>
                 <Container>
-                    <Fade>
                 <Row>
                     {colorSection}
-             </Row>
-             </Fade>
+                </Row>
              
                 </Container>     
                 
@@ -250,7 +235,6 @@ return(
             {project.id === 2 &&
                 <OneOffsetImg image = {project.images[4]} />  
             }
-    <Fade>
         
             <Row>
             {project.id === 0 &&
@@ -260,9 +244,7 @@ return(
                 <NextSteps project = {project}/>
                 </div>
             </Row>
-            </Fade>
         </Container>
-       
        </div>
 )
 }

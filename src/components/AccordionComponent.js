@@ -16,7 +16,7 @@ class Accordion extends Component {
         const directory = this.state.projects.map(project => {
             let title = <h2 data-event={project.id+1} key={project.id} >{project.name}</h2>
             let count = 0
-            let tag = project.tags.split(',').map(i=>{
+            let tag = project.tags.split(', ').map(i=>{
                 count++
                 return <h5 key = {count} style = {{textTransform:"uppercase"}}>{i}</h5>
 
@@ -33,7 +33,7 @@ class Accordion extends Component {
                        </div>
                        <span className = "spacer"></span>
                         <div className = "col-lg-5">
-                        <Fade>
+                        <Fade opposite>
                         {title}
                         <div style= {{paddingTop: "1rem", paddingBottom:"1rem"}}>{tag}</div>
                         <p style= {{paddingTop: "1rem"}}>{project.description}</p>

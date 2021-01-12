@@ -69,6 +69,16 @@ body.dark-mode {
   }
 }
 
+.fadeInStart {
+  opacity: 0;
+  transition: 2s opacity;
+}
+
+.fadeInEnd {
+  opacity: 0;
+  transition: 2s opacity;
+}
+
 body {
   font: 100% $font-stack;
   background-color: $background-color-dark;
