@@ -73,45 +73,11 @@ function NextSteps(props){
     )
 }
 
-// const scrollLoad = async () =>{
-//     const sections = Array.from(document.querySelectorAll("section"))
-
-//     new Promise((resolve, reject)=>{
-//         document.querySelector("body").scrollTo(0,0);
-//     }).then(()=>{
-//         sections.forEach(sec=>{
-//             let tl = new gsap.timeline(
-//                 {
-//                     paused: true, 
-//                 }
-//             ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-//             .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
-//             .from(sec.querySelector(".image-moving"), 1.4, {scale:1.6, ease:Power2.easeInOut, delay:-1.6})
-//             ScrollTrigger.create({
-//                 animation:tl,
-//                 trigger:sec,
-//                 start:"top bottom",
-//         })
-//         }) 
-//     })
-// }
-const doAnimation = () => {
-    const sections = Array.from(document.querySelectorAll("section"))
-    sections.forEach(sec=>{
-        let tl = new gsap.timeline(
-            {
-                paused: true, 
-            }
-        ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-        .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
-        .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
-        ScrollTrigger.create({
-            animation:tl,
-            trigger:sec,
-            start:"top bottom",
-    })
-    }) 
+const scrollTo = () => {
+    document.querySelector("body").scrollTo(0,0)
 }
+
+
 
 function GetProject(props){
     // let imageReveal = CSSRulePlugin.getRule('.img-container:after')
@@ -129,12 +95,30 @@ function GetProject(props){
         
         
         useEffect(()=>{
-        //  promise1.then()
-        async function loadingOrder(){
-            await document.querySelector("body").scrollTo(0,0)
-            doAnimation()
+        //  promise1.then()?
+        scrollTo()
+        let tl = new gsap.timeline()
+        const sections = Array.from(document.querySelectorAll("section"))
+        sections.forEach(sec=>{
+            tl = gsap.timeline(
+                {
+                    paused: true, 
+                }
+            ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
+            .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
+            .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
+            ScrollTrigger.create({
+            animation:tl,
+            trigger:sec,
+            start:"top bottom",
+    })
+    }) 
+        return () => {
+            tl.kill()
         }
-          loadingOrder()   
+        // setTimeout(() => {
+        //     doAnimation()
+        // }, 1000);    
         }, [pathname]);   
    
         

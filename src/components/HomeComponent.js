@@ -5,8 +5,6 @@ import Accordion from './AccordionComponent'
 import {ReactComponent as Rainbow} from '../assets/rainbow.svg'
 import {ReactComponent as FlowerDrop} from '../assets/flower-drop.svg'
 import Header from './HeaderComponent';
-import Fade from 'react-reveal/Fade';
-import ScrollAnimation from 'react-animate-on-scroll';
 let Hangel = "https://images.ctfassets.net/4hhd3ng2fxzv/59XLeKjKskOaSI1Ar30Mij/ead55ae60e97cae2192e17738115ee06/Hangel.jpg"
 
 function Home(props){
