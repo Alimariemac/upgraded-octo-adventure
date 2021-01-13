@@ -28,7 +28,7 @@ class Accordion extends Component {
                             <h1 className = "largeText textTop">{project.text1}</h1>
                             <div className = "reveal crop-image">
                             <div className = "reveal-after" style={{background:`${project.color}`}}></div>
-                            <img className = "img-responsive" src = {project.coverImage.src} style = {{width:"100%", height:"100%"}} alt={project.coverImage.alt}/>
+                            <img src = {project.coverImage.src} style = {{width:"100%", height:"100%", objectFit:"cover"}} alt={project.coverImage.alt}/>
                             {/* <div className = "mainImg" style = {{backgroundImage: `url(${project.coverImage})`}}></div>    */}
                             </div>
                             <h1 className = "largeText textBottom">{project.text2}</h1>

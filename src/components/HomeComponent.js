@@ -32,7 +32,6 @@ const DoAnimation = () => {
     //     trigger:sec,
     //     start:"top bottom",
     const sections = gsap.utils.toArray('.reveal-after')
-    console.log(sections)
     sections.forEach((reveal)=>{
         const anim = gsap.fromTo(reveal, {
             top:"0"}, {duration: .3, top:"100%"});
