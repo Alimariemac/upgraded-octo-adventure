@@ -33,7 +33,7 @@ class DarkModeToggle extends Component {
   render() {
     return (
       <React.Fragment>
-      <div className = "modeIcon mainIcon" onClick={this.handleModeChange}></div>
+      <div style={{cursor:"pointer"}} className = "modeIcon mainIcon" onClick={this.handleModeChange}></div>
       </React.Fragment>
     );
   }
