@@ -5,6 +5,7 @@ import NonIllustrationComponent from './NonIllustrationComponent'
 import IllustrationComponent from './IllustrationComponent'
 import { NavLink } from 'react-router-dom';
 import { PROJECTS } from '../shared/projects';
+import SeeSiteComponent from '../components/SeeSiteComponent'
 
 class Project extends Component {
     constructor(props) {
@@ -16,8 +17,6 @@ class Project extends Component {
     componentDidMount() {
         document.title = `${this.props.project.name}`;
       }
-      
-    
     render(){
         
         const project = this.props.project
@@ -39,15 +38,15 @@ class Project extends Component {
         }
         
     return(
-        // style = {{backgroundColor:`${this.props.project.color}`, color: "black"}}
         <Fragment>
+            {project.external &&
+            <SeeSiteComponent project = {project}></SeeSiteComponent>
+    }
         <Container fluid >
             <Header color = {'black'}/>
                     <Container>
                     <div className = "spacer"/>
                     <Row>
-                    
-                        
                         <div className = "order-lg-2 col-lg-8 offset-lg-1">
                         <h1 style={{paddingBottom:"2rem"}}>{project.name} <img className = "inlineImg" src={project.icon} alt="an icon associated with this project"/></h1>
                         </div>
@@ -65,11 +64,13 @@ class Project extends Component {
             <Row>
                 <Col className = "offset-md-8 col-md-4">
                     <NavLink to={`${nextProject.url}`}>
-                        <h3 style= {{paddingTop: "1rem", paddingBottom: "1rem"}}>{nextProject.name}</h3>
+                        <h3 style= {{paddingTop: "1rem", paddingBottom: "1rem"}}>{nextProject.name} ></h3>
                     </NavLink>
                 </Col>
             </Row> 
-        </Container>
+            <div className = "spacer"></div>        
+            
+            </Container>
         </Fragment>
     )
     }

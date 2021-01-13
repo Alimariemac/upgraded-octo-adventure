@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {PROJECTS} from '../shared/projects'
 import { Container, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class Accordion extends Component {
@@ -29,7 +29,6 @@ class Accordion extends Component {
                             <div className = "reveal crop-image">
                             <div className = "reveal-after" style={{background:`${project.color}`}}></div>
                             <img src = {project.coverImage.src} style = {{width:"100%", height:"100%", objectFit:"cover"}} alt={project.coverImage.alt}/>
-                            {/* <div className = "mainImg" style = {{backgroundImage: `url(${project.coverImage})`}}></div>    */}
                             </div>
                             <h1 className = "largeText textBottom">{project.text2}</h1>
                        </div>
@@ -38,9 +37,9 @@ class Accordion extends Component {
                         {title}
                         <div style= {{paddingTop: "1rem", paddingBottom:"1rem"}}>{tag}</div>
                         <p style= {{paddingTop: "1rem"}}>{project.description}</p>
-                        <NavLink to={`${project.url}`} >
+                        <Link to={`${project.url}`} >
                             <h3 style= {{paddingTop: "1rem", paddingBottom: "1rem"}}>More</h3>
-                        </NavLink>
+                        </Link>
                         </div>
                     </Row>
                     <div className = "spacer"></div>

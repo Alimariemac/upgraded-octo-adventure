@@ -1,7 +1,7 @@
 import {React, Fragment, useEffect} from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
 import {Left1Right2, DoubleImage, OneOffsetImg, FullOne} from '../components/ProjectImages'
-import {Power2, gsap} from "gsap"
+import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation } from "react-router-dom";
 
@@ -72,29 +72,7 @@ function NextSteps(props){
     )
 }
 
-const ScrollTo = () => {
-    document.querySelector("body").scrollTo(0,0)
-}
-
 const DoAnimation = () => {
-    //maybe it's not being called on the ones that are the same on the previous page bc it's already "been called previously" 
-    //do I need to reset the timeline?
-    //shouldn't be manipulating DOM directly
-    //maybe - set className to divs, change className with setState -> 2nd setState
-    // let tl = new gsap.timeline()
-    // const sections = Array.from(document.querySelectorAll("section"))
-    // sections.forEach(sec=>{
-    //     tl = gsap.timeline(
-    //         {
-    //             paused: true, 
-    //         }
-    //     ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-    //     .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
-    //     .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
-    //     ScrollTrigger.create({
-    //     animation:tl,
-    //     trigger:sec,
-    //     start:"top bottom",
     const sections = gsap.utils.toArray('.reveal-after')
     sections.forEach((reveal)=>{
         const anim = gsap.fromTo(reveal, {
@@ -121,8 +99,6 @@ function GetProject(props){
         
 
         useEffect(()=>{
-        //  promise1.then()?
-        ScrollTo()
         setTimeout(()=>{
             DoAnimation()
         }, 1000)
@@ -164,10 +140,6 @@ return(
                 <FullOne image = {project.images[3]} /> 
             </>
             }
-            
-    
-{/* make img-container width = width of image (add width and height to images)??? 
-</div> */}
             <Row>
                 <div className = "col col-md-8 offset-md-4">
                     <Research project = {project}/>
@@ -204,19 +176,14 @@ return(
             {project.id === 3 &&
                  <FullOne image = {project.images[1]} />  
             }
-            
-           
             </Container>
-
             <div className = "spacer"></div>
             <div className="stats" style= {{background:`${project.color}`}}>
                 <Container>
                 <Row>
                     {colorSection}
                 </Row>
-             
                 </Container>     
-                
             </div> 
             <div className= "spacer"></div> 
             <Container>
@@ -226,7 +193,6 @@ return(
             {project.id === 2 &&
                 <OneOffsetImg image = {project.images[4]} />  
             }
-        
             {project.id === 0 &&
                 <FullOne image = {project.images[11]} />  
             }

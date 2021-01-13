@@ -5,7 +5,7 @@ import Accordion from './AccordionComponent'
 import {ReactComponent as Rainbow} from '../assets/rainbow.svg'
 import {ReactComponent as FlowerDrop} from '../assets/flower-drop.svg'
 import Header from './HeaderComponent';
-import {Power2, gsap} from "gsap"
+import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation } from "react-router-dom";
 
@@ -62,7 +62,6 @@ function Home(props){
                             </h1>
                         </Col>
                     </Row>
-                <div className = "spacer"/>
             
                 <Row>
                     <Col>
@@ -70,7 +69,6 @@ function Home(props){
                     </Col>
                 </Row>
               
-                <div className = "spacer"/>
                 <div className = "spacer"/>
                 </Container>
                 <Accordion/>

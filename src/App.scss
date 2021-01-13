@@ -1,9 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 $font-stack: "Gangster", sans-serif;
-$parallax-perspective: 1 !default;
-$parallax-element: "body" !default;
-$parallax-ios: true !default;
 $background-color-dark: #1f1f1f;
 $background-color-light: #ffffff;
 
@@ -11,35 +8,27 @@ $background-color-light: #ffffff;
   font-family: "Gangster";
   src: local("Gangster"), url(./assets/gangstergrotesk-bold.woff) format("woff");
 }
-@mixin parallax-init(
-  $perspective: $parallax-perspective,
-  $element: $parallax-element,
-  $parallax-ios: $parallax-ios
-) {
-  @if $element == "body" {
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+
+.floating-div {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex; /* or inline-flex */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+  transition: transform 0.2s; /* Animation */
+  h5 {
+    padding: 10px;
+    margin: 0;
+    color: black;
   }
-  #{$element} {
-    overflow: auto;
-    perspective: $perspective * 1px;
-    transform-style: preserve-3d;
-    // Allows for smooth scrolling but disables parallax effects.
-    @if $parallax-ios == false {
-      -webkit-overflow-scrolling: touch;
-    }
-    // Preserve 3D
-    &,
-    * {
-      transform-style: preserve-3d;
-    }
-  }
+}
+
+.floating-div:hover {
+  transform: scale(1.05);
 }
 
 .reveal {
@@ -60,13 +49,6 @@ $background-color-light: #ffffff;
   transition: all 2s ease;
 }
 
-@mixin parallax($distance: 0, $perspective: $parallax-perspective) {
-  transform: translateZ($distance * $perspective * 1px);
-  //   scale(abs($distance - 1));
-  z-index: $distance * 1000;
-}
-
-@include parallax-init;
 a {
   cursor: pointer;
 }
@@ -129,14 +111,6 @@ body {
   }
 }
 
-.black-container {
-  position: absolute;
-  top: 0;
-  z-index: 10000;
-  width: 100%;
-  height: 100%;
-}
-
 html {
   font-size: 18px;
 }
@@ -173,18 +147,9 @@ html {
   padding-bottom: 2rem;
 }
 
-.grid1 {
-  display: grid;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(12, 100px);
-}
-
 .mainContainer {
   position: relative;
   width: 100%;
-  mix-blend-mode: luminosity;
   background-size: cover;
   overflow: hidden;
   margin-bottom: 3rem;
@@ -204,16 +169,6 @@ html {
   height: 70vh;
   object-fit: cover;
 }
-
-.parallaxSlow {
-  @include parallax(0.09);
-}
-
-.parallaxFast {
-  @include parallax(0.15);
-}
-
-//5 cols, 10 rows
 
 .stats {
   padding-top: 10rem;
@@ -321,5 +276,19 @@ h2 {
   .mainIcon {
     width: 100px;
     height: 100px;
+  }
+  .floating-div {
+    position: fixed;
+    bottom: 20px;
+    left: 15px;
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transform: rotate(-20deg);
+    transition: transform 0.2s; /* Animation */
+  }
+  .floating-div:hover {
+    transform: scale(1.05) rotate(-20deg);
   }
 }

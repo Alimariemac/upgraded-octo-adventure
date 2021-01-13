@@ -3,6 +3,7 @@ import { Switch, Route, Redirect} from 'react-router-dom';
 import Home from './HomeComponent';
 import { PROJECTS } from '../shared/projects';
 import Project from './Project'
+import ScrollToTop from "./ScrollToTop"
 
 class Main extends Component {  
     constructor(props) {
@@ -26,6 +27,7 @@ render(){
 
     return(
         <>
+        <ScrollToTop/>
            <Switch>
                <Route path='/home' component = {Home}/>
                <Route path='/:projectId' component={ProjectWithId} />

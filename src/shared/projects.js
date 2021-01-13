@@ -16,6 +16,7 @@ export const PROJECTS = [
     {
         id:0,
         url:"Foursquare-site",
+        external:"www.foursquare.com",
         name:"Launching a brand new Foursquare",
         images: FSQImages.images,
         backgroundImage: BackgroundImages[0].src,
@@ -68,6 +69,7 @@ export const PROJECTS = [
     {
         id:2,
         url:"Queerly-Health-brand-and-site",
+        external:"www.queerly.health",
         name:"Creating a queer-focused health start-up's identity",
         images:QueerlyImages.images,
         backgroundImage: BackgroundImages[2].src,
@@ -94,6 +96,7 @@ export const PROJECTS = [
     {
         id:3,
         url:"Jagermeister-interactive-ad",
+        external:"foursquare.celtra.com/preview/2da96e95",
         name:"Coding an interactive quiz ad in JS",
         images:JagerImages.images,
         backgroundImage: BackgroundImages[3].src,
