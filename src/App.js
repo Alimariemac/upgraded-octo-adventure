@@ -1,7 +1,7 @@
 import './App.css';
 import Main from './components/MainComponent';
 import React, {useEffect, useState} from 'react'
-import { BrowserRouter as Router} from 'react-router-dom';
+import { HashRouter as Router} from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './shared/Images'
 import {gsap} from "gsap"
