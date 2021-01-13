@@ -48,13 +48,13 @@ class Project extends Component {
                     <Row>
                     
                         
-                        <Col className = "order-md-2 col-md-8 offset-md-1">
+                        <div className = "order-lg-2 col-lg-8 offset-lg-1">
                         <h1 style={{paddingBottom:"2rem"}}>{project.name} <img className = "inlineImg" src={project.icon} alt="an icon associated with this project"/></h1>
-                        </Col>
-                        <Col className="col-md-3" style={{paddingTop:"1rem"}}>
+                        </div>
+                        <div className="col-lg-3" style={{paddingTop:"1rem"}}>
                         <h4>{project.company}</h4>
                         <p>{project.tags}</p>
-                        </Col>
+                        </div>
                     </Row>
                     <div className = "spacer"/>
                     </Container> 

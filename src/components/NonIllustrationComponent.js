@@ -229,14 +229,12 @@ return(
                 <OneOffsetImg image = {project.images[4]} />  
             }
         
-            <Row>
             {project.id === 0 &&
                 <FullOne image = {project.images[11]} />  
             }
                 <div className = "col col-md-8 offset-md-4">
                 <NextSteps project = {project}/>
                 </div>
-            </Row>
         </Container>
        </div>
 )
