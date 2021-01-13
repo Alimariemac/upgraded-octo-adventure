@@ -131,7 +131,7 @@ export const PROJECTS = [
         color:"#FAE33F",
         year:"2019",
         company: "Personal",
-        tags: "illustration,procreate,color,Adobe Illustrator",
+        tags: "illustration, procreate, color, Adobe Illustrator",
         tldr:"",
         role:"",
         why:"",
