@@ -1,25 +1,27 @@
 import './App.css';
 import Main from './components/MainComponent';
 import React, {useEffect, useState} from 'react'
-import { HashRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import './App.scss';
 import {IMAGES} from './shared/Images'
 import {gsap} from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import config from 'react-reveal/globals';
-
-config({ ssrFadeout: true });
+import ReactGA from 'react-ga';
+import {trackingId} from "../src/permissions"
 
 gsap.registerPlugin(ScrollTrigger);
 
+function initializeReactGA() {
+  ReactGA.initialize(trackingId);
+  ReactGA.pageview('/homepage');
+}
 
 function App() {
-
+  initializeReactGA()
 const [isLoading, setIsLoading] = useState(true)
 useEffect(()=>{
   const imgs= IMAGES
   cacheImages(imgs)
-  document.querySelector("body").scrollTo(0,0)
 })
 
 const cacheImages = async(srcArray)=>{
@@ -33,9 +35,6 @@ const cacheImages = async(srcArray)=>{
   });
   await Promise.all(promises);
   setIsLoading(false)
-  // setTimeout(function(){
-  //   setIsLoading(false)},3000
-  // );
 }
 
 

@@ -10,8 +10,7 @@ import { useLocation } from "react-router-dom";
 function Top(props){
     return(
         <section>
-        <div className="black-container pageMainImg" ></div>
-            <div className = "img-container pageMainImg" style={{width:"100%", height:"70vh"}}>
+            <div className = "pageMainImg" style={{width:"100%", height:"70vh"}}>
                 <img className = "image-moving" src = {props.project.fullImage} alt = {props.project.fullImage.alt} style={{objectFit:"cover", width:"100%", height:"100%"}}/>
             </div>
         </section>
@@ -73,14 +72,42 @@ function NextSteps(props){
     )
 }
 
-const scrollTo = () => {
+const ScrollTo = () => {
     document.querySelector("body").scrollTo(0,0)
 }
 
-
+const DoAnimation = () => {
+    //maybe it's not being called on the ones that are the same on the previous page bc it's already "been called previously" 
+    //do I need to reset the timeline?
+    //shouldn't be manipulating DOM directly
+    //maybe - set className to divs, change className with setState -> 2nd setState
+    // let tl = new gsap.timeline()
+    // const sections = Array.from(document.querySelectorAll("section"))
+    // sections.forEach(sec=>{
+    //     tl = gsap.timeline(
+    //         {
+    //             paused: true, 
+    //         }
+    //     ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
+    //     .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
+    //     .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
+    //     ScrollTrigger.create({
+    //     animation:tl,
+    //     trigger:sec,
+    //     start:"top bottom",
+    const sections = gsap.utils.toArray('.reveal-after')
+    console.log(sections)
+    sections.forEach((reveal)=>{
+        const anim = gsap.fromTo(reveal, {
+            top:"0"}, {duration: .3, top:"100%"});
+        ScrollTrigger.create({
+            trigger: reveal,
+            animation: anim
+        })
+    })   
+}
 
 function GetProject(props){
-    // let imageReveal = CSSRulePlugin.getRule('.img-container:after')
     const { pathname } = useLocation();
     const project = props.project
 
@@ -93,32 +120,14 @@ function GetProject(props){
             )
         }) : <Col><h3>{project.quote}</h3><p>-{project.attribution}</p></Col>)
         
-        
+
         useEffect(()=>{
         //  promise1.then()?
-        scrollTo()
-        let tl = new gsap.timeline()
-        const sections = Array.from(document.querySelectorAll("section"))
-        sections.forEach(sec=>{
-            tl = gsap.timeline(
-                {
-                    paused: true, 
-                }
-            ).to(sec.querySelector(".img-container"), 0, {css:{visibility:"visible"}})
-            .to(sec.querySelector(".black-container"), 1.4, {height:"0%", ease:Power2.easeInOut})
-            .from(sec.querySelector(".image-moving"), 1.4, {scale:1.4, ease:Power2.easeInOut, delay:-1.6})
-            ScrollTrigger.create({
-            animation:tl,
-            trigger:sec,
-            start:"top bottom",
-    })
-    }) 
-        return () => {
-            tl.kill()
-        }
-        // setTimeout(() => {
-        //     doAnimation()
-        // }, 1000);    
+        console.log("doing animation")
+        ScrollTo()
+        setTimeout(()=>{
+            DoAnimation()
+        }, 1000)
         }, [pathname]);   
    
         
@@ -190,8 +199,8 @@ return(
             }
             {project.id === 1 &&
                    <DoubleImage img1={project.images[3]} img2={project.images[4]}/>
-                    }
-                    {project.id === 2 &&
+            }
+            {project.id === 2 &&
                 <DoubleImage img1 = {project.images[0]} img2={project.images[1]}/>  
             }
             {project.id === 3 &&

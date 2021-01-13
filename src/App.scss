@@ -42,6 +42,24 @@ $background-color-light: #ffffff;
   }
 }
 
+.reveal {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.reveal-after {
+  content: " ";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all 2s ease;
+}
+
 @mixin parallax($distance: 0, $perspective: $parallax-perspective) {
   transform: translateZ($distance * $perspective * 1px);
   //   scale(abs($distance - 1));
@@ -49,7 +67,9 @@ $background-color-light: #ffffff;
 }
 
 @include parallax-init;
-
+a {
+  cursor: pointer;
+}
 body.dark-mode {
   font: 100% $font-stack;
   background-color: $background-color-light;
@@ -67,6 +87,9 @@ body.dark-mode {
   .black-container {
     background-color: #ffffff;
   }
+  .reveal-after {
+    background: #fff;
+  }
 }
 
 .fadeInStart {
@@ -77,6 +100,11 @@ body.dark-mode {
 .fadeInEnd {
   opacity: 0;
   transition: 2s opacity;
+}
+
+a,
+.nav-link {
+  cursor: pointer;
 }
 
 body {
@@ -96,8 +124,8 @@ body {
   .row {
     margin-bottom: 15px;
   }
-  .black-container {
-    background-color: #1f1f1f;
+  .reveal-after {
+    background: #1f1f1f;
   }
 }
 

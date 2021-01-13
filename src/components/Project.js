@@ -64,7 +64,7 @@ class Project extends Component {
         <div className = "spacer"></div>
             <Row>
                 <Col className = "offset-md-8 col-md-4">
-                    <NavLink to={`${nextProject.id}`}>
+                    <NavLink to={`${nextProject.url}`}>
                         <h3 style= {{paddingTop: "1rem", paddingBottom: "1rem"}}>{nextProject.name}</h3>
                     </NavLink>
                 </Col>

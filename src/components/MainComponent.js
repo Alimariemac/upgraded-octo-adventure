@@ -14,11 +14,12 @@ class Main extends Component {
 
     
 render(){
-    
+    //
         const ProjectWithId = ({match}) => {
+            //want to change text1 to "url" 
             return (
                 <Project
-                project={this.state.projects.filter(project => project.id === +match.params.projectId)[0]}
+                project={this.state.projects.filter(project => project.url === match.params.projectId)[0]}
             />     
             );
         };  
