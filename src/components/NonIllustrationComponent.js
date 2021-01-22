@@ -67,7 +67,7 @@ function NextSteps(props){
     return(
         <Fragment>
             <h3>Learnings & Next Steps</h3>
-            <p>{props.project.iterations}</p>
+            <p>{props.project.next}</p>
         </Fragment>
     )
 }
