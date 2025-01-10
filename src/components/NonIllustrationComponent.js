@@ -125,7 +125,11 @@ return(
                     <Why project = {project}/>
                 </div>
             </Row>
-            
+               {project.id === 0 &&
+            <>
+                <FullOne image = {project.images[0]} />  
+            </>
+            }
              {project.id === 1 &&
             <>
                 <FullOne image = {project.images[0]} />  
@@ -146,6 +150,11 @@ return(
                 </div>
             </Row>
 
+             {project.id === 0 &&
+            <>
+                <DoubleImage img1 = {project.images[1]} img2= {project.images[2]} /> 
+            </>
+            }
        {project.id === 1 &&
                  <Left1Right2 img1={project.images[3]} img2={project.images[4]} img3={project.images[5]}/>  
         }
@@ -160,6 +169,13 @@ return(
                     <Iterations project = {project}/>
                 </div>
             </Row>
+
+             {project.id === 0 &&
+            <>
+                <FullOne image = {project.images[3]} />  
+                <FullOne image = {project.images[4]} />  
+            </>
+            }
             {project.id ===1 &&
             <>
              <DoubleImage img1={project.images[6]} img2={project.images[7]}/>
