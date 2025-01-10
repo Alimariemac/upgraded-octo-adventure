@@ -58,8 +58,53 @@ let FSQNotification ="https://images.ctfassets.net/4hhd3ng2fxzv/6agikGiG2IBE38Gy
 let FSQIcons="https://images.ctfassets.net/4hhd3ng2fxzv/6rCfVsuFmVLkX2WNpYLbdQ/5d34db44170969dd8d6d75207fa3479d/FSQ-icons.jpg"
 let FSQScreens = "https://images.ctfassets.net/4hhd3ng2fxzv/1TJRw59DRu8CW4UpPypy7V/50efde696c879fdc1645db79e43809fe/fsqWebsite.jpg"
 
+//Microsoft
+let MSFTFull = ""
+let MSFTMain =""
+let MSFTOld= ""
+let MSFTResearch1=""
+let MSFTResearch2=""
+let MSFTIteration1=""
+let MSFTIteration2=""
 export const IMAGES = [
     {
+       "project": "MSFT",
+       "images":[
+            {id:0,
+            src:MSFTOld,
+            alt: "Wireframes of a desktop page and a mobile version of the same page."
+            },
+            {id:1,
+            src:MSFTResearch1,
+            alt: "Wireframes of a desktop page and a mobile version of the same page."
+            },
+            {id:2,
+                src:MSFTResearch2,
+                alt: "6 icons in pastel colors 3 by 2"
+            },
+            {id:3,
+                src:MSFTIteration1,
+                alt: "an illustration of four people, from left to right: A doctor sitting in a wheelchair, a person on their phone standing, a doctor standing and a person sitting with a dog on their lap"
+            },
+            {id:4,
+                src:MSFTIteration2,
+                alt: "3 pages of the Queerly Health website."
+            }
+        ],
+        "fullImage":{
+            id:0, 
+            src:MSFTFull,
+            alt: "5 pages of the Queerly Health website lined up together and rotated 15º degrees."
+
+        },
+        "coverImage":{
+            id:0, 
+            src: MSFTMain,
+            alt: "an image of a computer, in a purple room, open to Queerly Health's home page."
+
+        }
+
+    }, {
         "project": "FSQ",
         "images":[
         {id:0,
