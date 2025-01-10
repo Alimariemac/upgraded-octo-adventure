@@ -97,7 +97,7 @@ export const PROJECTS = [
     {
         id:3,
         url:"Queerly-Health-brand-and-site",
-        external:"www.queerly.health",
+        external:"",
         name:"Creating a queer-focused health start-up's identity",
         images:QueerlyImages.images,
         backgroundImage: BackgroundImages[2].src,
