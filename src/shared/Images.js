@@ -59,13 +59,13 @@ let FSQIcons="https://images.ctfassets.net/4hhd3ng2fxzv/6rCfVsuFmVLkX2WNpYLbdQ/5
 let FSQScreens = "https://images.ctfassets.net/4hhd3ng2fxzv/1TJRw59DRu8CW4UpPypy7V/50efde696c879fdc1645db79e43809fe/fsqWebsite.jpg"
 
 //Microsoft
-let MSFTFull = ""
-let MSFTMain =""
-let MSFTOld= ""
-let MSFTResearch1=""
-let MSFTResearch2=""
-let MSFTIteration1=""
-let MSFTIteration2=""
+let MSFTFull = "https://images.ctfassets.net/4hhd3ng2fxzv/7rOKWS57YhcAu3xVTiSGhA/58383fceb08d6580c1fb155ec7f42dce/top_image.jpg"
+let MSFTMain ="https://images.ctfassets.net/4hhd3ng2fxzv/1AXamuzSSVibvl61x5Zy62/a9b03bb752286e017d855a7b7e4b5bd1/main_image.jpg"
+let MSFTOld= "https://images.ctfassets.net/4hhd3ng2fxzv/78FeUdQCcxMZJSFCKTU2lb/81d41ac260a644f2b1107c56ac02473f/image_434.jpg"
+let MSFTResearch1="https://images.ctfassets.net/4hhd3ng2fxzv/pqLCyJVSYFbosbX3xrxhJ/38c16c7744d1a1c80da31f602b8c5b34/Events_2nd-image.jpg"
+let MSFTResearch2="https://images.ctfassets.net/4hhd3ng2fxzv/6cOhNMIHkAYGyKYS1vHZqn/c4d758a03b5d1d43231ab8859742d5f1/Events_3rd-image.jpg"
+let MSFTIteration1="https://images.ctfassets.net/4hhd3ng2fxzv/5UPYxVjmAQ7fdAUCi4HNwg/72b948f99f42bda4b60a78b0e2e046c0/iteration_1.jpg"
+let MSFTIteration2="https://images.ctfassets.net/4hhd3ng2fxzv/77dYiAm90NCcCTrvOdIVbY/db9f4114d6fcc1ac5ad10b27cfb40afb/iteration_2.jpg"
 export const IMAGES = [
     {
        "project": "MSFT",
