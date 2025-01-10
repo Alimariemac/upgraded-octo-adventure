@@ -24,7 +24,7 @@ export const PROJECTS = [
         coverImage: MSFTImages.coverImage,
         text1:"UX/UI",
         text2:"Design",
-        description:"I led Foursquare's website consolidation project where we merged 3 companies into one cohesive brand and website that finally encapsulated the story of Foursquare and where it is today.", 
+        description:"Through new and upgraded features, Microsoft webinars saw a significant increase in MAU, MAT and webinars started.", 
         color:"#A18ABA",
         year:"2024",
         company: "Microsoft",
