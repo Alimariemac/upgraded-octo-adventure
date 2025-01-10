@@ -26,7 +26,7 @@ export const PROJECTS = [
         text1:"UX/UI",
         text2:"Design",
         description:"Through new and upgraded features, Microsoft webinars saw a significant increase in MAU, MAT and webinars started.", 
-        color:"#A18ABA",
+        color:"#F6912E",
         year:"2024",
         company: "Microsoft",
         tags: "UX/UI, project management, content mapping, workshop facilitation",
