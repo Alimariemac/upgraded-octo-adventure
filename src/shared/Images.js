@@ -72,35 +72,35 @@ export const IMAGES = [
        "images":[
             {id:0,
             src:MSFTOld,
-            alt: "Wireframes of a desktop page and a mobile version of the same page."
+            alt: "An image of the old Microsoft webinar scheduling form."
             },
             {id:1,
             src:MSFTResearch1,
-            alt: "Wireframes of a desktop page and a mobile version of the same page."
+            alt: "A screenshot of a Figma brainstorm board with core tasks and pains and gains of a event creator."
             },
             {id:2,
                 src:MSFTResearch2,
-                alt: "6 icons in pastel colors 3 by 2"
+                alt: "A screenshot of a powerpoint slide ahowing a recap of the reasearch showing the core objectives of event schedulers throughout the event lifecycle."
             },
             {id:3,
                 src:MSFTIteration1,
-                alt: "an illustration of four people, from left to right: A doctor sitting in a wheelchair, a person on their phone standing, a doctor standing and a person sitting with a dog on their lap"
+                alt: "2 images side by side of a scheduling form. The image on the left looks slightly older. The one on the right has an additional banner image at the top and the imputs now have titles."
             },
             {id:4,
                 src:MSFTIteration2,
-                alt: "3 pages of the Queerly Health website."
+                alt: "2 images of a status screen, the one to the left and underneath is slightly older and just has collapsable tables while the one on top and to the right has one table that is filterable. "
             }
         ],
         "fullImage":{
             id:0, 
             src:MSFTFull,
-            alt: "5 pages of the Queerly Health website lined up together and rotated 15º degrees."
+            alt: "An image of 2 screens, the one on the left is the scheduling form for an event page while the one on the right is the preview of it."
 
         },
         "coverImage":{
             id:0, 
             src: MSFTMain,
-            alt: "an image of a computer, in a purple room, open to Queerly Health's home page."
+            alt: "an image of a and phone on desk opened to the webinar scheduling page."
 
         }
 
