@@ -126,7 +126,7 @@ return(
                 </div>
             </Row>
             
-             {project.id === 0 &&
+             {project.id === 1 &&
             <>
                 <FullOne image = {project.images[0]} />  
                 <p className = "p-small">Old Foursquare site</p> 
@@ -134,7 +134,7 @@ return(
                 <p className = "p-small">Old Factual and Placed sites</p> 
             </>
             }
-            {project.id === 2 &&
+            {project.id === 3 &&
             <>
                 <FullOne image = {project.images[2]} />   
                 <FullOne image = {project.images[3]} /> 
@@ -146,13 +146,13 @@ return(
                 </div>
             </Row>
 
-       {project.id === 0 &&
+       {project.id === 1 &&
                  <Left1Right2 img1={project.images[3]} img2={project.images[4]} img3={project.images[5]}/>  
         }
-        {project.id === 1 &&
+        {project.id === 2 &&
                  <Left1Right2 img1={project.images[2]} img2={project.images[1]} img3={project.images[0]}/>  
         }
-        {project.id === 3 &&
+        {project.id === 4 &&
                  <FullOne image = {project.images[0]}/>  
         }
             <Row>
@@ -160,20 +160,20 @@ return(
                     <Iterations project = {project}/>
                 </div>
             </Row>
-            {project.id ===0 &&
+            {project.id ===1 &&
             <>
              <DoubleImage img1={project.images[6]} img2={project.images[7]}/>
             <DoubleImage img1 = {project.images[9]} img2={project.images[8]}/>  
             <FullOne image = {project.images[10]} />
             </>
             }
-            {project.id === 1 &&
+            {project.id === 2 &&
                    <DoubleImage img1={project.images[3]} img2={project.images[4]}/>
             }
-            {project.id === 2 &&
+            {project.id === 3 &&
                 <DoubleImage img1 = {project.images[0]} img2={project.images[1]}/>  
             }
-            {project.id === 3 &&
+            {project.id === 4 &&
                  <FullOne image = {project.images[1]} />  
             }
             </Container>
@@ -187,13 +187,13 @@ return(
             </div> 
             <div className= "spacer"></div> 
             <Container>
-            {project.id === 1 &&
+            {project.id === 2 &&
                    <OneOffsetImg image={project.images[5]}/>
                     }
-            {project.id === 2 &&
+            {project.id === 3 &&
                 <OneOffsetImg image = {project.images[4]} />  
             }
-            {project.id === 0 &&
+            {project.id === 1 &&
                 <FullOne image = {project.images[11]} />  
             }
                 <div className = "col col-md-8 offset-md-4">
