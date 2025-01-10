@@ -17,7 +17,6 @@ export const PROJECTS = [
      {
         id:0,
         url:"Microsoft-webinar",
-        external:"www.foursquare.com",
         name:"Increasing webinar MAU by 58%",
         images: MSFTImages.images,
         backgroundImage: BackgroundImages[0].src,
