@@ -127,7 +127,8 @@ return(
             </Row>
                {project.id === 0 &&
             <>
-                <FullOne image = {project.images[0]} />  
+                <FullOne image = {project.images[0]} /> 
+                <p className = "p-small">Microsoft meeting scheduling form and old webinar form</p> 
             </>
             }
              {project.id === 1 &&
