@@ -77,9 +77,10 @@ function Home(props){
                 <Row>
                     <Col>
                     <h4 style={{paddingBottom: "2rem"}}>Social</h4>
-                    <a target = "blank" href = "https://dribbble.com/Alimariemac">Dribbble</a><br/><br/>
+                    <a target = "blank" href = "https://assets.ctfassets.net/4hhd3ng2fxzv/4Xrh5kEUzHZZM8b9eizbLS/523602916ffbcc74a0eb4ad7c081fbc0/AliciaMacCara-Resume-2025.pdf">Resumé</a>
                     <a target = "blank" href = "https://www.linkedin.com/in/aliciamariemaccara/">LinkedIn</a><br/><br/>
-                    <a target = "blank" href = "https://www.instagram.com/alimariemac">Instagram</a>
+                    <a target = "blank" href = "https://www.instagram.com/alimariemakes">Instagram</a>
+                    
                     </Col>
                 </Row>
                 <div className = "spacer"/>
